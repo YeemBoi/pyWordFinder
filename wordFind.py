@@ -1,4 +1,3 @@
-dictionary = open("/home/pi/Documents/corncob_lowercase.txt", "r")
 dupeDict = dict()
 guesses = []
 words = []
@@ -13,7 +12,7 @@ def getAnswer(message = "Would you like the output to be sorted by length?"):
 	userAnswer = input().lower()
 	if "y" in userAnswer: return True
 	elif "n" in userAnswer: return False
-	else: sys.exit()#return getAnswer("Sorry, I don't understand. Try rephrasing your answer.")
+	else: return getAnswer("Sorry, I don't understand. Try rephrasing your answer.")
 
 
 def checkStr (inputStr):
@@ -34,13 +33,16 @@ def checkArr ():
 					guesses.remove(word)
 
 
+def showWord(foundWord):
+	print(foundWord[0] + foundword[1:len(foundword)].lower())
+
 def orderedPrint ():
 	for requestLength in range(baseLength-1, 1, -1):
 		print()
 		print(requestLength, "letter words:")
 		for word in words:
 			if len(word) == requestLength:
-				print(word)
+				showWord(word)
 
 
 def showResults ():
@@ -49,14 +51,14 @@ def showResults ():
 	print("\n")
 	
 	if lengthSort == False:
-		for word in words: print(word)
+		for word in words: showWord(word)
 	else: orderedPrint()
 
 
 
 if mode == 1:
 	print("Enter your word!")
-	baseStr = input().lower()
+	baseStr = input().upper()
 	baseLength = len(baseStr)
 	for startCut in range(baseLength):
 		for endCut in range(startCut +1, baseLength +1):
@@ -65,9 +67,9 @@ if mode == 1:
 	checkArr()
 	showResults()
 	
-elif mode == 2:
+elif mode == 2: print("Feature not finished yet. Sorry!")"""
 	print("Enter your word!")
-	baseStr = input().lower()
+	baseStr = input().upper()
 	usedWords = [baseStr]
 	loopedWords = []
 	tracker = 0
@@ -93,11 +95,11 @@ elif mode == 2:
 								swapOutput += outConnect
 							iE += 1
 						tracker += check(swapOutput)
-		if tracker >= combinations: break
+		if tracker >= combinations: break"""
 
 else:
 	print("Please enter your letters. No spaces.")
-	baseStr = input().lower() + "\n"
+	baseStr = input().upper() + "\n"
 
 	baseLength = len(baseStr)
 
