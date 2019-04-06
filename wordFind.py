@@ -32,9 +32,8 @@ def checkArr ():
 					words.append(word[0:len(word)-1])
 					guesses.remove(word)
 
-
 def showWord(foundWord):
-	print(foundWord[0] + foundword[1:len(foundword)].lower())
+	print(foundWord[0] + foundWord[1:len(foundWord)].lower())
 
 def orderedPrint ():
 	for requestLength in range(baseLength-1, 1, -1):
@@ -43,7 +42,6 @@ def orderedPrint ():
 		for word in words:
 			if len(word) == requestLength:
 				showWord(word)
-
 
 def showResults ():
 	lengthSort = getAnswer()
@@ -67,35 +65,7 @@ if mode == 1:
 	checkArr()
 	showResults()
 	
-elif mode == 2: print("Feature not finished yet. Sorry!")"""
-	print("Enter your word!")
-	baseStr = input().upper()
-	usedWords = [baseStr]
-	loopedWords = []
-	tracker = 0
-	tracker += check(baseStr)
-	letterLength = len(baseStr)
-	combinations = factorialize(baseStr)
-
-	for i in range(combinations):
-		if i < len(usedWords):
-			currentStr = usedWords[i]
-			if not (currentStr in loopedWords):
-				loopedWords.add(currentStr)
-				for iA in range(letterLength-1):
-					for iB in range(iA + 1, letterLength):
-						swapoutput = ""
-						iE = 0
-						for outConnect in currentStr:
-							if iE == iB:
-								swapOutput += currentStr[iA]
-							elif iE == iA:
-								swapOutput += currentStr[iB]
-							else:
-								swapOutput += outConnect
-							iE += 1
-						tracker += check(swapOutput)
-		if tracker >= combinations: break"""
+elif mode == 2: print("Feature not finished yet. Sorry!")
 
 else:
 	print("Please enter your letters. No spaces.")
