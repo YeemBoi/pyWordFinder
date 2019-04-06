@@ -4,7 +4,7 @@ words = []
 baseStr = ""
 
 print('What mode would you like? Send:\n"0" for normal mode\n"1" for cutting mode\n"2" for swapping mode')
-mode = int(input())
+mode = input()
 
 
 def getAnswer(message = "Would you like the output to be sorted by length?"):
@@ -54,7 +54,7 @@ def showResults ():
 
 
 
-if mode == 1:
+if mode == "1":
 	print("Enter your word!")
 	baseStr = input().upper()
 	baseLength = len(baseStr)
@@ -65,7 +65,7 @@ if mode == 1:
 	checkArr()
 	showResults()
 	
-elif mode == 2: print("Feature not finished yet. Sorry!")
+elif mode == "2": print("Feature not finished yet. Sorry!")
 
 else:
 	print("Please enter your letters. No spaces.")
