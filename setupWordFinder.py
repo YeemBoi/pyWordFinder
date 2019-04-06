@@ -1,7 +1,7 @@
 print("Please paste the file path of your dictionary file. This file contains a list of words.")
 dictPath = input()
 
-print("Please paste the file path of the Python file.")
+print("Please paste the file path of the pyWordFinder folder.")
 pyPath = input()
 startPy = open(pyPath, "rt")
 startText = startPy.read()
@@ -11,8 +11,8 @@ startPy = open(pyPath, "wt")
 startPy.write(allText)
 startPy.close()
 
-exePath = pyPath[0:pyPath.rfind("/")] + "/wordFind.bat"
-exec = open(exePath, "wt")
-exec.write("python3 " + pyPath)
+execPath = pyPath[0:pyPath.rfind("/")] + "/wordFind.bat"
+exec = open(execPath, "wt")
+exec.write("python3 " + pyPath + "/wordFind.py")
 exec.close()
-print("Done! Your  program should be ready to use at", exePath)
+print("Done! Your  program should be ready to use at", execPath)
