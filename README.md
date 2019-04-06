@@ -1,7 +1,7 @@
 ## What it does:
 Basically, you just enter some letters and it finds all the words that can be spelled with the letters.
 ## How to install:
-1. In Linux terminal, run `git clone https://github.com/YeemBoi/pyWordFinder`
+1. First, run `git clone https://github.com/YeemBoi/pyWordFinder` in Linux terminal
 2. Run "setupWordFinder.py" with `python3`
 3. Done! Just run the new batch file to use the word finder
 ### Dictionaries:
